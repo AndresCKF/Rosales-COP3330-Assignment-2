@@ -6,25 +6,27 @@ package OOP.assignment2.ex28;
 import java.util.Scanner;
 public class solution28 {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
         int sum;
-        sum = findSum();
-        //ask user for 5 inputs
-        //sum inputs
-        //print
+        int[] fiveNums = getFive();
+        sum = findSum(fiveNums);
         System.out.printf("The sum is %d",sum);
     }
 
-    private static int findSum() {
-        int fiveNums[] = getFive();
-
+    public static int findSum(int[] arr) {
+        int sum = 0;
+        int i;
+        for (i = 0; i < arr.length; i++)
+            sum +=  arr[i];
+        return sum;
     }
 
     private static int[] getFive() {
-        int fiveNums[] = new int [5];
-        for(int i=0;i<fiveNums.length();i++){
+        Scanner scanner = new Scanner(System.in);
+        int[] fiveNums = new int [5];
+        for(int i=0; i < fiveNums.length; i++){
             System.out.print("Please enter a number:");
-
+            fiveNums[i] = scanner.nextInt();
         }
+        return fiveNums;
     }
 }
