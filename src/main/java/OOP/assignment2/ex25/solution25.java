@@ -1,5 +1,5 @@
 /*
- *  UCF COP3330 Summer 2021 Assignment 1 Solution
+ *  UCF COP3330 Summer 2021 Assignment 2 Solution
  *  Copyright 2021 Andres Rosales
  */
 /*
@@ -102,7 +102,19 @@ public class solution25 {
     }
     public String getInput() {
         Scanner scanner = new Scanner(System.in);
+        boolean condition = true;
+        String password = "";
+            //prevent empty password.
         System.out.print("Please enter a password");
-        return scanner.nextLine();
+        while(condition){
+            password = scanner.nextLine();
+            if(password.isEmpty()) {
+                System.out.println("Nothing was entered. Please try again");
+            }
+            else{
+                condition = false;
+            }
+        }
+        return password;
     }
 }
