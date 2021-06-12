@@ -14,7 +14,13 @@ public class getEmployeeDataTest {
     getEmployeeData employeeData = new getEmployeeData();
 
     @Test
-    void checkOutofBoundsZipcode_isfalse(){
+    void checkemployeeID_istrue(){
+        Person newEmployee = new Person("andres", "rosales", "px-1204",12345);
+        boolean result = employeeData.checkFormat(newEmployee);
+        assertTrue(result);
+    }
+    @Test
+    void checkOutofBounds_employeeID_isfalse(){
         Person newEmployee = new Person("andres", "rosales", "ax-123m",12345);
         boolean result = employeeData.checkFormat(newEmployee);
         assertFalse(result);

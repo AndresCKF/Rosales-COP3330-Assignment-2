@@ -11,6 +11,7 @@ public class getEmployeeData {
     public static Person getInput() {
         Scanner scanner = new Scanner(System.in);
         Person newEmployee = new Person();
+        //populate employee
         System.out.print("Please enter first name:");
         newEmployee.firstN = scanner.nextLine();
         System.out.print("Please enter last name:");
@@ -18,6 +19,7 @@ public class getEmployeeData {
         System.out.print("Please enter Employee ID:");
         newEmployee.employeeID = scanner.nextLine();
         System.out.print("Please enter Zipcode:");
+        newEmployee.zipcode = scanner.nextInt();
         return newEmployee;
     }
 
@@ -30,7 +32,7 @@ public class getEmployeeData {
                 System.out.println("Name must be at least 2 characters long. Please try again");
                 return false;
             }
-            if(!newEmployee.employeeID.matches("^[A-Z]{2}-\\d{4}")) {
+            if(!(newEmployee.employeeID.matches("^[A-Za-z]{2}-\\d{4}$"))) {
                 System.out.println("Format is AA-1234. Please try again");
                 return false;
             }
@@ -38,7 +40,7 @@ public class getEmployeeData {
                 System.out.println("Zipcode must be a number");
                 return false;
             }
-             return true;
+            return true;
 
     }
 }

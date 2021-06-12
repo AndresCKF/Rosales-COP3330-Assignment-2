@@ -17,6 +17,7 @@ public class solution27 {
                 cond = false;
             }
         }
+        System.out.printf("Y");
     }
 
 }
