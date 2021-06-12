@@ -5,7 +5,7 @@ public class PaymentCalculator {
 
     }
     public int calculateMonthsUntilPaidOff(double[] paymentInfo){
-        double b = paymentInfo[0];
+        double b = Math.ceil(paymentInfo[0]*100)/100;
         double i = paymentInfo[1]/36500.0;
         double p = paymentInfo[2];
         double n; //Number of months
