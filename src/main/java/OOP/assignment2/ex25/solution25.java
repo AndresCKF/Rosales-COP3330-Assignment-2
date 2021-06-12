@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 public class solution25 {
     //create class that counts each kind of character.
-    final class passwordMakeup
+    final public class passwordMakeup
     {
         public int special;
         public int letters;
@@ -25,22 +25,67 @@ public class solution25 {
             this.letters = 0;
             this.numbers = 0;
         }
-        public displayCount(){
-            System.out.printf("# Specials = %d", this.special);
-            System.out.printf("# Specials = %d", this.special);
-            System.out.printf("# Specials = %d", this.special);
+        public void displayCount(){
+            System.out.printf("# Specials = %d\n", this.special);
+            System.out.printf("# Letters = %d\n", this.letters);
+            System.out.printf("# Numbers = %d\n", this.numbers);
 
         }
     }
     public static void main(String[] args){
         solution25 app = new solution25();
         String password = app.getInput();
-        passwordMakeup passwordCount = app.countCharacters(password);
-        // count number of letters,numbers, and special characters
         //given these parameters, pass to another function that determines strength
         //output The password '12345' is a very weak password.
+        int strengthValue = app.passwordValidator(password);
+        String strength = app.StrengthtoString(strengthValue);
+        System.out.printf("The password %s is %s", password, strength);
 
     }
+
+    private String StrengthtoString(int strengthValue) {
+        String strengthString = "";
+        switch(strengthValue){
+            case 1 :
+                strengthString = "Very Weak";
+                break;
+            case 2 :
+                strengthString = "Weak";
+                break;
+            case 3 :
+                strengthString = "Average";
+                break;
+            case 4 :
+                strengthString = "Strong";
+                break;
+            case 5 :
+                strengthString = "Very Strong";
+        }
+        return strengthString;
+
+    }
+
+    public int passwordValidator(String password) {
+        // count number of letters,numbers, and special characters
+        passwordMakeup passwordCount = countCharacters(password);
+        //given makeup of password, determine strength.
+        int passwordValue;
+        if (password.length() < 8){
+            if((passwordCount.letters == 0) && (passwordCount.special == 0)){
+                passwordValue = 1;
+            }else{
+                passwordValue = 2;
+            }
+        }else if((passwordCount.letters > 0) && (passwordCount.numbers > 0) && (passwordCount.special > 0)){
+            passwordValue = 5;
+        }else if((passwordCount.letters > 0) && (passwordCount.numbers > 0) && (passwordCount.special == 0)){
+            passwordValue = 4;
+        }else{
+            passwordValue = 3;
+        }
+        return passwordValue;
+    }
+
     public passwordMakeup countCharacters(String password){
         passwordMakeup passwordCount = new passwordMakeup();
         for (int i = 0; i < password.length(); ++i) {
