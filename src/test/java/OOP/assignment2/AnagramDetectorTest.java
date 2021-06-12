@@ -5,35 +5,36 @@
 package OOP.assignment2;
 
 import OOP.assignment2.ex24.base.AnagramDetector;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class AnagramDetectorTest{
+class AnagramDetectorTest {
 
-    @Test
-     void isAnagram_returns_true_for_anagrams()
-    {
-        //given
-        AnagramDetector detector = new AnagramDetector();
+        @Test
+        void isAnagram_returns_true_for_anagrams()
+        {
+            //given
+            AnagramDetector detector = new AnagramDetector();
 
-        //when boolean
-        boolean actual = detector.isAnagram("note", "tone");
-        boolean expected = true;
+            //when boolean
+            boolean actual = detector.isAnagram("note", "tone");
+            boolean expected = true;
 
-        //then
-        assertEquals(expected, actual);
-    }
-    @Test
-    void isAnagram_returns_false_for_anagrams()
-    {
-        //given
-        AnagramDetector detector = new AnagramDetector();
+            //then
+            assertEquals(expected, actual);
+        }
+        @Test
+        void isAnagram_returns_false_for_anagrams()
+        {
+            //given
+            AnagramDetector detector = new AnagramDetector();
 
-        //when boolean
-        boolean actual = detector.isAnagram("wordwordwordwordwordword", "tone");
-        boolean expected = false;
+            //when boolean
+            boolean actual = detector.isAnagram("wordwordwordwordwordword", "tone");
+            boolean expected = false;
 
-        //then
-        assertEquals(expected, actual);
-    }
+            //then
+            assertEquals(expected, actual);
+        }
+
 }
