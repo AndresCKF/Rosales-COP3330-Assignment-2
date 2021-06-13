@@ -23,4 +23,11 @@ public class solution34Test {
         List <String> functionAnswer = solution34.removeEmployee("Chris Jones", employees);
         Assert.assertEquals(revisedEmployees, functionAnswer);
     }
+    @Test
+    void impropername_doesnt_changeList(){
+        List <String> employees = new LinkedList<String>(Arrays.asList("John Smith","Jackie Jackson",
+                "Chris Jones","Amanda Cullen","Jeremy Goodwin"));
+        List <String> functionAnswer = solution34.removeEmployee("3", employees);
+        Assert.assertEquals(employees, functionAnswer);
+    }
 }
