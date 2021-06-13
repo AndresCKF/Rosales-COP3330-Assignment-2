@@ -24,7 +24,7 @@ public class solution35 {
         Scanner scanner = new Scanner(System.in);
         String name;
         do {
-            System.out.println("%nEnter a name:");
+            System.out.printf("%nEnter a name:");
             name = scanner.nextLine();
             contestants.add(name);
         }while(!name.equals(""));

@@ -10,8 +10,8 @@ import org.testng.Assert;
 import java.util.Arrays;
 import java.util.List;
 import java.sql.Array;
-
 import static org.junit.jupiter.api.Assertions.*;
+
 public class solution33Test {
     solution33 app = new solution33();
     @Test
