@@ -71,7 +71,7 @@ public class solution32 {
         return playerState;
     }
 
-    private static int getDifficulty() {
+    public static int getDifficulty() {
         Scanner scanner = new Scanner(System.in);
         int difficulty;
         do{
@@ -95,7 +95,7 @@ public class solution32 {
         return number;
     }
 
-    private static int generateRand(int difficulty) {
+    public static int generateRand(int difficulty) {
         Random rand = new Random();
         int gameNum;
         if(difficulty == 1){
