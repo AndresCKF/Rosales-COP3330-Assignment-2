@@ -5,7 +5,6 @@
 
 package OOP.assignment2.ex34;
 import java.util.*;
-
 public class solution34 {
     public static void main(String[] args) {
         //print out list of employees
