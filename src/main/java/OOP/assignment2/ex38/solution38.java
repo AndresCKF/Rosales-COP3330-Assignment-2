@@ -12,7 +12,7 @@ public class solution38 {
         System.out.println(filteredList.toString());
     }
 
-    private static List filterEvenNumbers(List<Integer> list) {
+    public static List filterEvenNumbers(List<Integer> list) {
         for(int i = 0; i < list.size();i++){
             if(!(list.get(i)%2 == 0) ){
                 list.remove(i);
